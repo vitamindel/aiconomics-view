@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIconomics</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo"><span class="logo-bold">AI</span>conomics</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#learn" class="nav-link">Learn</a>
+                <a href="#competitions" class="nav-link">Competitions</a>
+                <a href="#aboutus" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <section id="home" class="home-page section">
+            <div class="ai-interaction">
+                <h2>AI Assistant</h2>
+                <p class="section-description">Ask me anything about economics, markets, or finance!</p>
+                <form id="aiForm" class="ai-form">
+                    <input type="text" id="userInput" class="input-field" placeholder="Enter your question..." required />
+                    <button type="submit" id="submitBtn" class="submit-button">Ask AI</button>
+                </form>
+                <div id="aiResponse" class="ai-response"></div>
+            </div>
+        </section>        
+
+
+            <!-- Learn Section with Cards -->
+            <section id="learn" class="learn-section section">
+                <h3 class="section-title">Learn</h3>
+                <p class="section-description">Explore more about AI and economics here!</p>
+
+                <div class="cards-grid">
+                    <div class="card" onclick="navigateTo('sup_and_demand.html')">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">Supply and Demand Dynamics</h3>
+                        <p class="card-description">How prices are set based on the availability of goods and services and the demand for them.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('int_trade.html')">
+                        <div class="card-icon">📡</div>
+                        <h3 class="card-title">International Trade</h3>
+                        <p class="card-description">The exchange of goods between countries and how tariffs and trade agreements shape global markets.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('market_struc.html')">
+                        <div class="card-icon">🧩</div>
+                        <h3 class="card-title">Market Structures</h3>
+                        <p class="card-description">Understand different market structures like monopolies, oligopolies, and perfect competition.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('econ_indicator.html')">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Economic Indicators</h3>
+                        <p class="card-description">Learn how GDP, inflation, and employment data provide insights into an economy's performance.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('fiscal_pol.html')">
+                        <div class="card-icon">📅</div>
+                        <h3 class="card-title">Fiscal Policy</h3>
+                        <p class="card-description">Discover how governments use taxation and spending to influence economic conditions.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('monetary_policy.html')">
+                        <div class="card-icon">📜</div>
+                        <h3 class="card-title">Monetary Policy</h3>
+                        <p class="card-description">Explore how central banks manage money supply and interest rates to achieve economic stability.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('behavioral_economics.html')">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Behavioral Economics</h3>
+                        <p class="card-description">Understand how psychological factors influence economic decisions and behaviors.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                    <div class="card" onclick="navigateTo('environmental_economics.html')">
+                        <div class="card-icon">🌍</div>
+                        <h3 class="card-title">Environmental Economics</h3>
+                        <p class="card-description">Explore the intersection of economics and environmental sustainability, including carbon pricing.</p>
+                        <span class="card-link">Read more →</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competitions Section -->
+            <section id="competitions" class="competitions-section section">
+                <h3 class="section-title">Competitions</h3>
+                <p class="section-description">Participate in exciting competitions related to AI and economics.</p>
+                <div class="compcontainer">
+                    <!-- Card 1 -->
+                    <div class="compcard">
+                        <div class="compcontent">
+                            <h1>The Hultz Prize</h1>
+                            <p>
+                                The Hult Prize focuses on social entrepreneurship, challenging students to solve pressing global issues. Winners receive $1 million in seed funding to launch their social enterprise.
+                            </p>
+                            <div class="comptags">
+                                <span class="comptag">University</span>
+                                <span class="comptag">Competition</span>
+                                <span class="comptag">Social Entrepreneurship</span>
+                                <span class="comptag">Global</span>
+                            </div>
+                        </div>
+                        <div class="compcta">
+                            <a href="https://www.hultprize.org/" target="_blank">
+                                <button>Visit Website</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="compcontainer">
+                    <!-- Card 2 -->
+                    <div class="compcard">
+                        <div class="compcontent">
+                            <h1>Rice Business Plan Competition</h1>
+                            <p>
+                                The Rice Business Plan Competition is the world's largest and richest graduate-level student startup competition, with over $2 million in prizes and investments.
+                            </p>
+                            <div class="comptags">
+                                <span class="comptag">University</span>
+                                <span class="comptag">Competition</span>
+                                <span class="comptag">Startups</span>
+                                <span class="comptag">National</span>
+                            </div>
+                        </div>
+                        <div class="compcta">
+                            <a href="https://rbpc.rice.edu/" target="_blank">
+                                <button>Visit Website</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="compcontainer">
+                    <!-- Card 3 -->
+                    <div class="compcard">
+                        <div class="compcontent">
+                            <h1>FBLA</h1>
+                            <p>
+                                Future Business Leaders of America (FBLA) is a leading student organization that prepares middle school, high school, and college students for careers in business. FBLA offers competitive events, conferences, and leadership development opportunities to enhance career readiness.
+                            </p>
+                            <div class="comptags">
+                                <span class="comptag">All Students</span>
+                                <span class="comptag">Competition</span>
+                                <span class="comptag">Business/Leadership</span>
+                                <span class="comptag">Global</span>
+                            </div>
+                        </div>
+                        <div class="compcta">
+                            <a href="https://www.fbla.org/" target="_blank">
+                                <button>Visit Website</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="compcontainer">
+                    <!-- Card 4 -->
+                    <div class="compcard">
+                        <div class="compcontent">
+                            <h1>MIT $100K Entrepreneurship Competition</h1>
+                            <p>
+                                The MIT $100K is a student-managed business plan competition that offers $100,000 in funding to early-stage ventures across various industries.
+                            </p>
+                            <div class="comptags">
+                                <span class="comptag">University</span>
+                                <span class="comptag">Competition</span>
+                                <span class="comptag">Startups/Innovation</span>
+                                <span class="comptag">National</span>
+                            </div>
+                        </div>
+                        <div class="compcta">
+                            <a href="https://www.mit100k.org/" target="_blank">
+                                <button>Visit Website</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="compcontainer">
+                    <!-- Card 5 -->
+                    <div class="compcard">
+                        <div class="compcontent">
+                            <h1>DECA</h1>
+                            <p>
+                                DECA's ICDC provides high school and college students with the opportunity to develop and present business plans, competing for scholarships and recognition.
+                            </p>
+                            <div class="comptags">
+                                <span class="comptag">All Students</span>
+                                <span class="comptag">Competition</span>
+                                <span class="comptag">Business Plans/Marketing</span>
+                                <span class="comptag">Global</span>
+                            </div>
+                        </div>
+                        <div class="compcta">
+                            <a href="https://www.deca.org/" target="_blank">
+                                <button>Visit Website</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="aboutus" class="aboutus-section section">
+                <h3 class="section-title"></h3>
+                <p class="section-description"></p>
+                <div class="about-us-hero">
+                    <h1>About Us</h1>
+                    <p>Learn about the team behind AIconomics and our mission.</p>
+                </div>
+                
+                <div class="team-section">
+                    <h2>Meet the Founder</h2>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <img src="profilepic.jpg" alt="Team Member" class="team-image">
+                            <h3 class="team-name">Ashwin Kirubakaran</h3>
+                            <p class="team-role">Founder</p>
+                            <p class="team-bio">Hi, I'm Ashwin, a freshman at the Edison Academy Magnet School with a deep passion for Economics and Computer Science. My journey into these fields began in middle school when I joined my school's FBLA club. Last year, I had the incredible opportunity to attend the FBLA National Conference, where I not only had a blast meeting like-minded peers but also achieved a perfect score on one of the tests. In the future, I hope to leverage my skills in both Economics and Computer Science to create impactful solutions, contribute to global advancements, and inspire others to pursue their passions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section section">
+                <h3 class="section-title">Contact Us</h3>
+                <p class="section-description">We'd love to hear from you! Fill out the form below to get in touch.</p>
+                
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Enter the subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-input" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <h3>AIconomics</h3>
+                <p>Providing exceptional services for your needs</p>
+            
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ashwin-kirubakaran-465921318/" class="fa-brands fa-linkedin"></a>
+                    <a href="https://www.instagram.com/ashwinkirubakaran/" class="fa-brands fa-instagram"></a>
+                </div>
+            
+                <div class="footer-links">
+                    <a href="#aboutus">About Us</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            
+                <div class="copyright">
+                    &copy; 2024 AIconomics. All Rights Reserved.
+                </div>
+            </footer>
+                  
+            
+        </main>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script type="module" src="main.js"></script>
