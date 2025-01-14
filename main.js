@@ -10,14 +10,13 @@ let messages = {
 };
 
 async function sendMessage(event) {
-    event.preventDefault(); // Prevent form submission refresh
+    event.preventDefault(); 
 
     const userMessage = document.querySelector("#userInput").value.trim();
     const responseContainer = document.querySelector("#aiResponse");
 
     if (userMessage.length) {
         try {
-            // Clear input field and display user message
             document.querySelector("#userInput").value = "";
             responseContainer.insertAdjacentHTML("beforeend", `
                 <div class="user">
@@ -25,18 +24,15 @@ async function sendMessage(event) {
                 </div>
             `);
 
-            // Send the message to the AI model
             const chat = model.startChat(messages);
             const result = await chat.sendMessage(userMessage);
 
-            // Display the AI's response
             responseContainer.insertAdjacentHTML("beforeend", `
                 <div class="model">
                     <p>${result.response.text()}</p>
                 </div>
             `);
 
-            // Update message history
             messages.history.push({
                 role: "user",
                 parts: [{ text: userMessage }],
@@ -54,12 +50,10 @@ async function sendMessage(event) {
             `);
         }
 
-        // Scroll to the latest response
         responseContainer.scrollTop = responseContainer.scrollHeight;
     }
 }
 
-// Attach the sendMessage function to the form
 document.querySelector("#aiForm").addEventListener("submit", sendMessage);
 
     document.addEventListener('scroll', function () {
@@ -72,7 +66,6 @@ document.querySelector("#aiForm").addEventListener("submit", sendMessage);
         const sectionTop = section.offsetTop - 100; // Adjust offset for better detection
         const sectionBottom = sectionTop + section.offsetHeight;
 
-        // Adjust logic for smaller sections
         if (
             (window.scrollY >= sectionTop && window.scrollY < sectionBottom) ||
             (window.scrollY + window.innerHeight > sectionBottom && 
@@ -91,51 +84,28 @@ document.querySelector("#aiForm").addEventListener("submit", sendMessage);
 });
 
 
-// Function to dynamically render AI responses with Markdown
 function renderResponse(rawResponse) {
-    // Convert the raw response to HTML using the marked library
     const formattedHTML = marked(rawResponse);
 
-    // Create a new chat bubble for the response
     const chatBubble = document.createElement('div');
     chatBubble.className = 'chat-bubble ai-response'; // Add classes for styling
     chatBubble.innerHTML = formattedHTML; // Inject the formatted HTML
 
-    // Append the bubble to the chat container
     document.querySelector('.chat-container').appendChild(chatBubble);
 }
 
 
 function handleIncomingMessage(message) {
-    // Check if the message contains Markdown (optional validation)
     const isMarkdown = /\*|_|#|`|>|-/.test(message);
-
-    // Format using Markdown parser if applicable
     const formattedHTML = isMarkdown ? marked(message) : message;
-
-    // Create a chat bubble
     const chatBubble = document.createElement('div');
     chatBubble.className = 'chat-bubble'; // Add styling class
     chatBubble.innerHTML = formattedHTML;
-
-    // Append to the chat container
     document.querySelector('.chat-container').appendChild(chatBubble);
 }
 
-// Example usage
-const rawResponse = `
-Here are your options:
-
-1. **Learn about Markdown:** A lightweight markup language for formatting text.
-2. **Experiment with Markdown:** Try things like \`inline code\`, *italic*, or **bold**.
-3. [Markdown Guide](https://www.markdownguide.org): A comprehensive resource.
-`;
-
-handleIncomingMessage(rawResponse);
-
 function onAIResponseReceived(responseText) {
-    handleIncomingMessage(responseText); // Format and display the message
+    handleIncomingMessage(responseText); 
 }
 
-// Simulate AI response
 onAIResponseReceived(`Here is **bold text** and a [link](https://example.com)!`);
